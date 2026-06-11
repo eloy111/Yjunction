@@ -21,28 +21,37 @@ boundaryField
 {
     inlet
     {
-        type            fixedValue;
-        value           uniform (10 0 0);
+        type zeroGradient;
     }
 
-    outlet
+    outletLeft
     {
-        type            zeroGradient;
+        type zeroGradient;
     }
 
-    upperWall
+    outletRight
     {
-        type            noSlip;
+        type zeroGradient;
     }
 
-    lowerWall
+    wall
     {
-        type            noSlip;
+        type noSlip;
     }
 
-    frontAndBack
+    aneurysm
     {
-        type            empty;
+        type noSlip;
+    }
+
+    front
+    {
+        type empty;
+    }
+
+    back
+    {
+        type empty;
     }
 }
 

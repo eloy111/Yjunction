@@ -16,33 +16,44 @@ FoamFile
 dimensions      [0 2 -2 0 0 0 0];
 
 internalField   uniform 0;
-
 boundaryField
 {
     inlet
     {
-        type            zeroGradient;
+        type fixedValue;
+	value uniform 22.64; // Kinematic pressure = 24000/ 1060
     }
 
-    outlet
+    outletLeft
     {
-        type            fixedValue;
-        value           uniform 0;
+        type fixedValue;
+        value uniform 22.26;
     }
 
-    upperWall
+    outletRight
     {
-        type            zeroGradient;
+        type fixedValue;
+        value uniform 22.2642;
     }
 
-    lowerWall
+    wall
     {
-        type            zeroGradient;
+        type zeroGradient;
     }
 
-    frontAndBack
+    aneurysm
     {
-        type            empty;
+        type zeroGradient;
+    }
+
+    front
+    {
+        type empty;
+    }
+
+    back
+    {
+        type empty;
     }
 }
 
